@@ -36,7 +36,12 @@ Nếu bạn muốn kết nối MongoDB có username/password, chỉnh `MONGO_URI
 1. Cài dependencies:
 
 ```bash
+# On Mac
 cd /Users/mvmanh/Desktop/api
+npm install
+
+# On Windows
+cd D:\DevOps\sample-midterm-project\sample-midterm-node.js-project
 npm install
 ```
 
