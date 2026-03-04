@@ -42,9 +42,11 @@ async function start() {
     usingMongo = true;
     console.log('Connected to MongoDB — using mongodb as data source.');
   } catch (err) {
-    usingMongo = false;
-    console.log('Failed to connect to MongoDB within 3s — falling back to in-memory database.');
-  }
+  usingMongo = false;
+  console.log('Failed to connect to MongoDB. Error message:', err?.message);
+  console.log('Full error object:', err);
+  console.log('Falling back to in-memory database.');
+}
 
   await dataSource.init(usingMongo);
 
