@@ -1,0 +1,24 @@
+services:
+  web:
+    image: lamkhang0602/products-app:latest
+    container_name: products-web
+    restart: unless-stopped
+    env_file:
+      - .env.production
+    depends_on:
+      - mongodb
+    ports:
+      - "127.0.0.1:3000:3000"
+    volumes:
+      - app_uploads:/app/public/uploads
+
+  mongodb:
+    image: mongo:6.0
+    container_name: products-mongodb
+    restart: unless-stopped
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:
+  app_uploads:
